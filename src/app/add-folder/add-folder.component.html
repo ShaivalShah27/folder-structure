@@ -1,0 +1,82 @@
+<ul>
+  <li *ngFor="let list of mainArray; let i = index">
+    <div
+      class="m-t-20"
+      (mouseenter)="mouseEnter(list.id)"
+      (mouseleave)="mouseLeave()"
+    >
+      <span>
+        <i
+          [ngClass]="
+            list.type === 'folder'
+              ? 'fa fa-folder gold font20'
+              : 'fa fa-file'
+          "
+        ></i>
+      </span>
+      {{ list.name }}
+
+      <span
+        *ngIf="
+          list.type === 'folder' && iconVisible && onFocusId === list.id
+        "
+        class="m-l-10"
+      >
+        <i
+          class="fa fa-plus circle"          
+          (click)="addFileOrFolder(list)"
+        ></i>
+      </span>
+      <span class="m-l-10" *ngIf="iconVisible && onFocusId === list.id">
+        <i
+          class="fa fa-trash-o circle redColor"          
+          (click)="deleteFileOrFolder(list)"
+        ></i>
+      </span>
+    </div>
+
+    <app-add-folder [mainArray]="list.children"></app-add-folder>
+
+    <div *ngIf="objectId === list.id" class="m-t-20 width400">
+      <div *ngIf="!selectedType && objectId === list.id">
+        <button type="button" (click)="selectType('file')">File</button>
+        <button type="button" (click)="selectType('folder')">Folder</button>
+      </div>
+
+      <span *ngIf="selectedType">
+        <i
+          [ngClass]="
+            selectedType === 'folder'
+              ? 'fa fa-folder gold font20'
+              : 'fa fa-file '
+          "
+        ></i>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          class="m-l-10"
+          [formControl]="name"
+        />
+
+        <i
+          class="fa fa-check greenColor m-l-10 circle"
+          (click)="addChildren(list)"
+        ></i>
+
+        <i
+          class="fa fa-close redColor m-l-10 circle"          
+          (click)="cancelFileOrFolder()"
+        ></i>
+
+        <div *ngIf="!name.valid && (name.touched || name.dirty)">
+          <div
+            class="redColor m-l-25"
+            *ngIf="name.errors && name.errors['required']"
+          >
+            Name is required
+          </div>
+        </div>
+      </span>
+    </div>
+  </li>
+</ul>
