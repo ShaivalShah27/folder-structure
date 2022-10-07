@@ -1,3 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
-@import 'designer.scss';
-@import '~font-awesome/css/font-awesome.css';
+.centerAlign {
+    text-align: center;
+}
+
+.greenColor {
+    color: green;
+}
+
+.redColor {
+    color: red;
+}
+
+.gold {
+    color: gold;
+}
+
+.font20 {
+    font-size: 20px !important;
+}
+
+.m-t-20 {
+    margin-top: 20px !important;
+}
+
+.m-t-40 {
+    margin-top: 40px !important;
+}
+
+.m-l-10 {
+    margin-left: 10px !important;
+}
+
+.m-l-20 {
+    margin-left: 20px !important;
+}
+
+.m-l-25 {
+    margin-left: 25px !important;
+}
+
+.width300 {
+    width: 300px !important;
+}
+
+.width400 {
+    width: 400px !important;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+button{
+    cursor: pointer;
+}

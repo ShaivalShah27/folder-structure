@@ -6,35 +6,23 @@
   <app-add-folder [mainArray]="addedFolderArray"> </app-add-folder>
 
   <div *ngIf="showTextBox" class="m-t-20 width300">
-    <input
-      type="text"
-      placeholder="Enter Folder Name"
-      [formControl]="folderName"
-    />
-    <span class="m-l-10">
-      <i class="fa fa-plus circle" (click)="addFolder()"></i>
-    </span>
-    <span class="m-l-10">
-      <i
-        class="fa fa-trash-o redColor circle"        
-        (click)="deleteFolder()"
-      ></i>
-    </span>
-
+    <input type="text" placeholder="Enter Folder Name" [formControl]="folderName" />
+    <button class="m-l-10" (click)="addFolder()">
+      Add
+    </button>
+    <button class="m-l-10" (click)="deleteFolder()">
+      Delete
+    </button>
     <div *ngIf="!folderName.valid && (folderName.touched || folderName.dirty)">
-      <div
-        class="redColor"
-        *ngIf="folderName.errors && folderName.errors['required']"
-      >
+      <div class="redColor" *ngIf="folderName.errors && folderName.errors['required']">
         Folder Name is required
       </div>
-    </div>    
+    </div>
   </div>
 
   <div class="m-t-40">
     <textarea rows="10" cols="40" readonly>
           {{ addedFolderArray | json }}
-      </textarea
-    >
+      </textarea>
   </div>
 </div>
