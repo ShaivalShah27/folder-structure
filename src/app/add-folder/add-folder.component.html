@@ -25,7 +25,7 @@
 
       <span *ngIf="selectedType">
         <img class='icon'
-          [src]="list?.type === 'file' ? 'assets/images/file-regular.svg' : 'assets/images/folder-open-regular.svg'">
+          [src]="selectedType === 'file' ? 'assets/images/file-regular.svg' : 'assets/images/folder-open-regular.svg'">
         <input type="text" placeholder="Enter Name" class="m-l-10" [formControl]="name" />
 
         <button (click)="addChildren(list)">Add children</button>
