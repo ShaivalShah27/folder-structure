@@ -1,11 +1,11 @@
 <div>
-  <h1 class="centerAlign">Folder Structure</h1>
+  <h1 class="center-align">Folder Structure</h1>
 
   <button type="button" (click)="addFolderToRoot()">Add Folder To Root</button>
 
   <app-add-folder [mainArray]="addedFolderArray"> </app-add-folder>
 
-  <div *ngIf="showTextBox" class="m-t-20 width300">
+  <div *ngIf="showTextBox" class="m-t-20 width-300">
     <input type="text" placeholder="Enter Folder Name" [formControl]="folderName" />
     <button class="m-l-10" (click)="addFolder()">
       Add
@@ -14,7 +14,7 @@
       Delete
     </button>
     <div *ngIf="!folderName.valid && (folderName.touched || folderName.dirty)">
-      <div class="redColor" *ngIf="folderName.errors && folderName.errors['required']">
+      <div class="required" *ngIf="folderName.errors && folderName.errors['required']">
         Folder Name is required
       </div>
     </div>

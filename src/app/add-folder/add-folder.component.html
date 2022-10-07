@@ -33,7 +33,7 @@
         <button (click)="cancelFileOrFolder()">Cancel</button>
 
         <div *ngIf="!name.valid && (name.touched || name.dirty)">
-          <div class="redColor m-l-25" *ngIf="name.errors && name.errors['required']">
+          <div class="required m-l-25" *ngIf="name.errors && name.errors['required']">
             Name is required
           </div>
         </div>

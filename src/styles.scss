@@ -1,49 +1,38 @@
-.centerAlign {
+.center-align {
     text-align: center;
 }
 
-.greenColor {
-    color: green;
-}
 
-.redColor {
+.required {
     color: red;
 }
 
-.gold {
-    color: gold;
-}
-
-.font20 {
-    font-size: 20px !important;
-}
-
 .m-t-20 {
-    margin-top: 20px !important;
+    margin-top: 20px ;
 }
 
 .m-t-40 {
-    margin-top: 40px !important;
+    margin-top: 40px ;
 }
 
 .m-l-10 {
-    margin-left: 10px !important;
+    margin-left: 10px ;
 }
 
 .m-l-20 {
-    margin-left: 20px !important;
+    margin-left: 20px ;
 }
 
 .m-l-25 {
-    margin-left: 25px !important;
+    margin-left: 25px ;
 }
 
-.width300 {
-    width: 300px !important;
+.width-300 {
+    width: 300px ;
 }
 
-.width400 {
-    width: 400px !important;
+.width-400 {
+    width: 400px ;
 }
 
 img {
@@ -52,6 +41,6 @@ img {
     margin-right: 10px;
 }
 
-button{
+button {
     cursor: pointer;
 }
